@@ -1,0 +1,184 @@
+```html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <title>Pro Estate Stuttgart – Immobilien Wertermittlung</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="https://www.pro-estate-stuttgart.de/wp-content/uploads/2025/02/Logo-ProEstate-04.svg" type="image/svg+xml">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+    body { background: #222635; color: #FFFFFF; font-family: 'Montserrat', sans-serif; line-height:1.6; }
+    a { color: #CCAA6E; text-decoration: none; }
+    h1, h2 { font-family: 'ITC Avant Garde', sans-serif; color: #CCAA6E; margin-bottom:1rem; }
+    h2::before { content:''; display:inline-block; width:2rem; height:2px; background:#CCAA6E; margin-right:0.5rem; vertical-align:middle; }
+    .wrapper {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    header { text-align: center; margin-bottom: 3rem; }
+    header a { display: inline-flex; align-items: center; }
+    header img { height: 3rem; }
+    header h1 { font-size: 2.25rem; margin-left: 1rem; }
+    header h2 { margin-top: 0.5rem; font-size: 1.25rem; }
+    section { position: relative; padding: 4rem 0; }
+    section + section { border-top: 1px solid #CCAA6E; }
+    .two-col {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+    }
+    .col-text { flex: 1 1 300px; }
+    .col-img { flex: 1 1 300px; overflow: visible; }
+    .parallax {
+      position: relative;
+      height: 0; padding-bottom: 56.25%;
+      overflow: visible;
+    }
+    .parallax img {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      object-fit: cover;
+      border-radius: 1rem;
+      filter: drop-shadow(0 0 20px rgba(0,0,0,0.25));
+      will-change: transform;
+      transform: translateY(0);
+    }
+    iframe {
+      width: 100%; height: 1000px; border: none;
+      border-radius: 0.5rem;
+      margin-top: 3rem;
+    }
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      padding: 2rem 0;
+    }
+    .pdf-button-container {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .pdf-button {
+      background-color: #CCAA6E;
+      color: #222635;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .pdf-button:hover {
+      background-color: #b8965d;
+      transform: translateY(-2px);
+    }
+    footer a { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; }
+    footer img { height: 1.5rem; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <a href="https://pro-estate-stuttgart.de">
+        <img src="https://www.pro-estate-stuttgart.de/wp-content/uploads/2025/02/Logo-ProEstate-04.svg" alt="Pro Estate Stuttgart Logo">
+        <h1>Pro Estate Stuttgart</h1>
+      </a>
+      <h2>Immobilien Wertermittlung</h2>
+      <p>von</p>
+      <h2>"Haußmannstraße 136, 70188 Stuttgart"</h2>
+    </header>
+
+    <section>
+      <div class="col-text">
+        <h2>Objektübersicht</h2>
+        <p>
+          Diese exklusive Villa in der Haußmannstraße 136, 70188 Stuttgart bietet eine außergewöhnliche Wohnlage. Erbaut im Jahr 2021 in massiver Bauweise, wurde das Haus im selben Jahr umfassend saniert. Mit einer Wohnfläche von 90 m² und einer Grundstücksgröße von 130 m² bietet es großzügigen Platz. Die Ausrichtung nach Süden sorgt für viel Tageslicht, während der neuwertige Dachzustand zusätzlichen Komfort bietet.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="two-col">
+        <div class="col-text">
+          <h2>Eckdaten</h2>
+          <ul>
+            <li>Adresse: Haußmannstraße 136, 70188 Stuttgart</li>
+            <li>Objekttyp: Haus | Villa</li>
+            <li>Baujahr: 2021</li>
+            <li>Große Sanierung im Jahr: 2021</li>
+            <li>Wohnfläche: 90 m²</li>
+            <li>Nutzfläche: 85 m²</li>
+            <li>Grundstücksgröße: 130 m²</li>
+            <li>Parkmöglichkeiten: Carport</li>
+            <li>Kaufpreis: €180</li>
+            <li>Aktuelle Miete: €1400</li>
+            <li>Energieeffizienz: Klasse A</li>
+            <li>Ausstattungsstandard: Mittel</li>
+            <li>Bodenbeläge: Parkett, Teppich, Fliesen</li>
+            <li>Besonderheiten: Offene Küche, Kücheninsel, Kamin</li>
+            <li>Außenbereich: Balkon, Terrasse, Garten, Keller</li>
+          </ul>
+        </div>
+        <div class="col-img">
+          <div class="parallax">
+            <img src="https://i.ibb.co/HTCsHt4W/Hau-mannstra-e-136-70188-Stuttgart.jpg">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Rechnung</h2>
+      <iframe src="https://docs.google.com/spreadsheets/d/1szlMVc_2cT4pACYaFsZxPcwkA7j-AFIrXgW0d7dxN3U/edit?usp=sharing" width="100%" height="600px" frameborder="0"></iframe>
+    </section>
+
+    <div class="pdf-button-container">
+      <button class="pdf-button" onclick="downloadPDF()">🖨️ PDF herunterladen</button>
+    </div>
+
+    <footer>
+      <a href="https://pro-estate-stuttgart.de">
+        <img src="https://www.pro-estate-stuttgart.de/wp-content/uploads/2025/02/Logo-ProEstate-04.svg" alt="Pro Estate Stuttgart Logo Favicon">
+        Pro Estate Stuttgart
+      </a>
+    </footer>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const imgs = document.querySelectorAll('.parallax img');
+      const speed = 0.05;
+      const maxOffset = 40;
+      function update() {
+        imgs.forEach(img => {
+          const rect = img.parentElement.getBoundingClientRect();
+          const offset = (rect.top + rect.height / 2) - window.innerHeight / 2;
+          const displacement = Math.max(-maxOffset, Math.min(maxOffset, -offset * speed));
+          img.style.transform = `translateY(${displacement}px)`;
+        });
+      }
+      window.addEventListener('scroll', update);
+      update();
+    });
+  </script>
+  <script>
+    function downloadPDF() {
+      const element = document.querySelector('.wrapper');
+      const opt = {
+        margin: 0.5,
+        filename: 'Immobilienbewertung.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    }
+  </script>
+</body>
+</html>
+```
