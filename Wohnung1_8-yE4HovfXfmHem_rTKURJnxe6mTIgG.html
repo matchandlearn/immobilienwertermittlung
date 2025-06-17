@@ -13,25 +13,18 @@
       margin: 0;
       padding: 0;
     }
-
     body {
       background: #222635;
       color: #FFFFFF;
       font-family: 'Montserrat', sans-serif;
       line-height: 1.6;
     }
-
-    a {
-      color: #CCAA6E;
-      text-decoration: none;
-    }
-
+    a { color: #CCAA6E; text-decoration: none; }
     h1, h2 {
       font-family: 'ITC Avant Garde', sans-serif;
       color: #CCAA6E;
       margin-bottom: 1rem;
     }
-
     h2::before {
       content: '';
       display: inline-block;
@@ -47,26 +40,17 @@
       margin: 0 auto;
       padding: 2rem 1rem;
     }
-
     header {
       text-align: center;
       margin-bottom: 3rem;
     }
-
     header a {
       display: inline-flex;
       align-items: center;
+      gap: 1rem;
     }
-
-    header img {
-      height: 3rem;
-    }
-
-    header h1 {
-      font-size: 2.25rem;
-      margin-left: 1rem;
-    }
-
+    header img { height: 3rem; }
+    header h1 { font-size: 2.25rem; }
     header h2 {
       margin-top: 0.5rem;
       font-size: 1.25rem;
@@ -76,7 +60,6 @@
       position: relative;
       padding: 4rem 0;
     }
-
     section + section {
       border-top: 1px solid #CCAA6E;
     }
@@ -84,49 +67,36 @@
     .two-col {
       display: flex;
       flex-wrap: wrap;
-      gap: 2rem;
       align-items: flex-start;
+      gap: 2rem;
     }
-
-    .col-text {
-      flex: 1 1 300px;
-    }
-
-    .col-img {
-      flex: 1 1 300px;
-      overflow: visible;
-    }
+    .col-text { flex: 1 1 300px; }
+    .col-img { flex: 1 1 300px; overflow: visible; }
 
     .parallax-wrapper {
       position: relative;
     }
-
     .parallax {
       position: relative;
       height: 0;
       padding-bottom: 56.25%;
       overflow: visible;
     }
-
     .parallax img {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       object-fit: cover;
       border-radius: 1rem;
       filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.25));
       will-change: transform;
       transform: translateY(0);
     }
-
     .parallax .overlay {
       position: absolute;
       top: -1rem;
       right: -1.5rem;
       width: 120px;
-      height: auto;
       border-radius: 0.5rem;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
       z-index: 2;
@@ -145,17 +115,13 @@
       margin-top: 4rem;
       padding: 2rem 0;
     }
-
     footer a {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
       font-size: 0.9rem;
     }
-
-    footer img {
-      height: 1.5rem;
-    }
+    footer img { height: 1.5rem; }
   </style>
 </head>
 <body>
@@ -163,77 +129,52 @@
     <!-- Header -->
     <header>
       <a href="https://pro-estate-stuttgart.de">
-        <img src="https://www.pro-estate-stuttgart.de/wp-content/uploads/2025/02/Logo-ProEstate-04.svg" alt="Pro Estate Stuttgart Logo">
+        <img src="https://www.pro-estate-stuttgart.de/wp-content/uploads/2025/02/Logo-ProEstate-04.svg" alt="Logo Pro Estate Stuttgart">
         <h1>Pro Estate Stuttgart</h1>
       </a>
       <h2>Immobilien Wertermittlung</h2>
       <p>von</p>
-      <h2>Haußmannstraße 136, 70188</h2>
+      <h2>{{ $('OpenAI').item.json.message.content.Adresse }}</h2>
     </header>
 
-    <!-- Dynamischer Hauptinhalt -->
+    <!-- Objektübersicht -->
     <section>
-  <div class="col-text">
-    <h2>Objektübersicht</h2>
-    <p>
-      In der begehrten Haußmannstraße 136 in Stuttgart befindet sich eine charmante Dachgeschosswohnung, die sich als perfekte Investitionsmöglichkeit präsentiert. Sie wurde 1955 massiv erbaut und 2008 teilweise saniert. Die Wohnung erstreckt sich über eine Wohnfläche von 65 m² und bietet durch die Ausrichtung nach Süden reichlich Tageslicht. Zu den Annehmlichkeiten zählen ein Wohnzimmer, ein Schlafzimmer, eine Küche und ein Bad mit Tageslicht. Zudem bietet die Wohnung einen Balkon und einen Wintergarten, der zusätzlichen Wohnkomfort schafft. Obwohl es keinen Aufzug gibt und das Dach ungepflegt ist, überzeugt die Wohnung durch ihren attraktiven Schnitt und die zentrale Lage mit hervorragender Nachbarschaft. 
-    </p>
-  </div>
-</section>
+      <div class="col-text">
+        <h2>Objektübersicht</h2>
+        <p>HIER KOMMT DEIN FLIEßTEXT INTELLIGENT REIN</p>
+      </div>
+    </section>
 
-<section>
-  <div class="two-col">
-    <!-- Eckdaten-Liste -->
-    <div class="col-text">
-      <h2>Eckdaten</h2>
-      <ul>
-        <li>Adresse: Haußmannstraße 136, 70188 Stuttgart</li>
-        <li>Objekttyp: Dachgeschosswohnung</li>
-        <li>Kaufpreis: 190.000 €</li>
-        <li>Aktuelle Mieteinnahmen: 800 €/Monat</li>
-        <li>Hausgeld: 200 €/Monat</li>
-        <li>Rücklagen: 20.000 €</li>
-        <li>Baujahr: 1955, Sanierung: 2008</li>
-        <li>Wohnfläche: 65 m²</li>
-        <li>Zimmer: 2</li>
-        <li>Balkon/Wintergarten: Ja</li>
-        <li>Parkmöglichkeiten: Stellplatz</li>
-        <li>Besonderheiten: Einbauküche, Laminatböden</li>
-        <li>Energieeffizienzklasse: E</li>
-        <li>Heizsystem: Zentralheizung (Gas)</li>
-        <li>Sanierung: Partiell, Dach ungepflegt</li>
-      </ul>
-    </div>
-
-    <!-- Parallax-Bild mit Overlay -->
-    <div class="col-img">
-      <div class="parallax-wrapper">
-        <div class="parallax">
-          <img 
-            src="https://i.ibb.co/nhKS48p/318b00df-67ab-4ce9-a5f9-16ea736d3d34.jpg" 
-            alt="Lagekarte der Immobilie"
-          >
-          <img 
-            class="overlay" 
-            src="https://i.ibb.co/Vc2QhQQ6/66d877b2-d6e0-46e1-9894-4d57f5e79aef.jpg" 
-            alt="Kaufpreis-Overlay"
-          >
+    <!-- Eckdaten mit Parallax-Bild -->
+    <section>
+      <div class="two-col">
+        <div class="col-text">
+          <h2>Eckdaten</h2>
+          <ul>
+            <li>HIER KOMMEN DIE ECKDATEN INTELLIGENT HEREIN</li>
+          </ul>
+        </div>
+        <div class="col-img">
+          <div class="parallax-wrapper">
+            <div class="parallax">
+              <img src="{{ $('IMG_Karte_Homeday').first().json.data.url }}" alt="Lagekarte">
+              <img class="overlay" src="{{ $('IMG_Preis_Homeday').first().json.data.url }}" alt="Preis-Overlay">
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-    <!-- Rechnungsbereich -->
+    <!-- Rechnung -->
     <section>
       <h2>Rechnung</h2>
-      <iframe src="https://docs.google.com/spreadsheets/d/1hikuT8NQmcUsW9IDRu6-z1serjo6wj-UY6Xxe0szhnk/edit?usp=sharing" width="100%" height="600px" frameborder="0"></iframe>
+      {{ $('HTTP Request').item.json.iframe }}
     </section>
 
     <!-- Footer -->
     <footer>
       <a href="https://pro-estate-stuttgart.de">
-        <img src="https://www.pro-estate-stuttgart.de/wp-content/uploads/2025/02/Logo-ProEstate-04.svg" alt="Pro Estate Stuttgart Logo Favicon">
+        <img src="https://www.pro-estate-stuttgart.de/wp-content/uploads/2025/02/Logo-ProEstate-04.svg" alt="Logo Pro Estate Stuttgart">
         Pro Estate Stuttgart
       </a>
     </footer>
@@ -242,26 +183,24 @@
   <!-- Parallax-Logik -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const mainImgs = document.querySelectorAll('.parallax img:not(.overlay)');
+      const mainImgs    = document.querySelectorAll('.parallax img:not(.overlay)');
       const overlayImgs = document.querySelectorAll('.parallax .overlay');
-
-      const speedMain = 0.05;
+      const speedMain    = 0.05;
       const speedOverlay = 0.1;
-      const maxOffset = 40;
+      const maxOffset    = 40;
 
       function updateParallax() {
         mainImgs.forEach(img => {
           const rect = img.parentElement.getBoundingClientRect();
-          const offset = (rect.top + rect.height / 2) - window.innerHeight / 2;
-          const displacement = Math.max(-maxOffset, Math.min(maxOffset, -offset * speedMain));
-          img.style.transform = `translateY(${displacement}px)`;
+          const offset = (rect.top + rect.height/2) - window.innerHeight/2;
+          const disp   = Math.max(-maxOffset, Math.min(maxOffset, -offset * speedMain));
+          img.style.transform = `translateY(${disp}px)`;
         });
-
         overlayImgs.forEach(img => {
           const rect = img.parentElement.getBoundingClientRect();
-          const offset = (rect.top + rect.height / 2) - window.innerHeight / 2;
-          const displacement = Math.max(-maxOffset, Math.min(maxOffset, -offset * speedOverlay));
-          img.style.transform = `translateY(${displacement}px)`;
+          const offset = (rect.top + rect.height/2) - window.innerHeight/2;
+          const disp   = Math.max(-maxOffset, Math.min(maxOffset, -offset * speedOverlay));
+          img.style.transform = `translateY(${disp}px)`;
         });
       }
 
