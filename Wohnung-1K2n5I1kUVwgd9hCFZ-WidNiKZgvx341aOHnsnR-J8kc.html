@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <title>Pro Estate Stuttgart – Immobilien Wertermittlung</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="https://www.pro-estate-stuttgart.de/wp-content/uploads/2025/02/Logo-ProEstate-04.svg" type="image/svg+xml">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: #222635;
+      color: #FFF;
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+    }
+    a {
+      color: #CCAA6E;
+      text-decoration: none;
+    }
+    h1, h2 {
+      font-family: 'ITC Avant Garde', sans-serif;
+      color: #CCAA6E;
+      margin-bottom: 1rem;
+    }
+    h2::before {
+      content: '';
+      display: inline-block;
+      width: 2rem;
+      height: 2px;
+      background: #CCAA6E;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+    }
+
+    .wrapper {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    header a {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    header img { height: 3rem; }
+    header h1 { font-size: 2.25rem; }
+    header h2 {
+      margin-top: 0.5rem;
+      font-size: 1.25rem;
+    }
+
+    section {
+      position: relative;
+      padding: 4rem 0;
+    }
+
+    section + section {
+      border-top: 1px solid #CCAA6E;
+    }
+
+    .two-col {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 2rem;
+    }
+
+    .col-text {
+      flex: 1 1 300px;
+    }
+
+    .col-img {
+      flex: 1 1 300px;
+      overflow: visible;
+      position: relative; /* Wichtig für das Positionieren des Overlays */
+    }
+
+    /* Wrapper für Parallax (nicht zwingend nötig, aber erlaubt zusätzliche Steuerung) */
+    .parallax-wrapper {
+      position: relative;
+    }
+
+    /* Parallax-Container */
+    .parallax {
+      position: relative;
+      height: 0;
+      padding-bottom: 56.25%; /* 16:9 Verhältnis */
+      overflow: visible;
+    }
+
+    /* Hintergrundbild (z. B. Karte) */
+    .parallax img:not(.overlay) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 1rem;
+      filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.25));
+      will-change: transform;
+      transform: translateY(0);
+    }
+
+    /* Overlay-Bild (z. B. Preisanzeige) */
+    .parallax .overlay {
+      position: absolute;
+      top: -1rem;
+      right: -2rem;
+      width: 180px;         /* ← mach’s z. B. 180px breit */
+      height: auto;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+      z-index: 2;
+    }
+
+    iframe {
+      width: 100%;
+      height: 1000px;
+      border: none;
+      border-radius: 0.5rem;
+      margin-top: 3rem;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      padding: 2rem 0;
+    }
+
+    footer a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    footer img { height: 1.5rem; }
+
+    .download-btn {
+      display: inline-block;
+      background-color: #CCAA6E;
+      color: #222635;
+      font-weight: bold;
+      padding: 1rem 2rem;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 0 15px rgba(204, 170, 110, 0.4);
+    }
+    .download-btn:hover {
+      background-color: #b8965f;
+      transform: translateY(-2px);
+      box-shadow: 0 0 25px rgba(204, 170, 110, 0.6);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- Header -->
+    <header>
+      <a href="https://pro-estate-stuttgart.de">
+        <img src="https://www.pro-estate-stuttgart.de/wp-content/uploads/2025/02/Logo-ProEstate-04.svg" alt="Logo Pro Estate Stuttgart">
+        <h1>Pro Estate Stuttgart</h1>
+      </a>
+      <h2>Immobilien Wertermittlung</h2>
+      <p>von</p>
+      <h2>Steinäckerstraße 23, 73262 Reichenbach an der Fils</h2>
+    </header>
+
+    <section>
+      <div class="col-text">
+        <h2>Objektübersicht</h2>
+        <p>Diese gepflegte Maisonette-Wohnung in Massivbauweise wurde im Jahr 1999 erbaut und bietet mit 112 m² Wohnfläche großzügigen Raum für anspruchsvolles Wohnen. Die Immobilie befindet sich in der Steinäckerstraße 23 in Reichenbach an der Fils und überzeugt durch ihren guten Gesamtzustand, eine moderne Zentralheizung mit Gas sowie eine attraktive Energieeffizienzklasse B. Die im südlichen Bereich ausgerichtete Wohnung verfügt unter anderem über ein großzügiges Wohnzimmer, drei Schlafzimmer, eine separate Küche, ein Tageslichtbad mit Wanne und Dusche sowie ein separates WC. Ein Kaminofen sorgt dabei für zusätzliche Wohnqualität. Der gesamte Wohnbereich ist mit pflegeleichten Bodenbelägen wie Vinyl, Laminat und Fliesen ausgestattet. Die vorhandene Einbauküche ist im Kaufpreis enthalten. Ein Balkon sowie ein Kellerraum ergänzen das Raumangebot. Eine Garage mit 13 m² Stellfläche rundet dieses interessante Angebot ab. Trotz der Lage im dritten Obergeschoss ist die Wohnung aufgrund ihres Schnitts und der ruhigen Nachbarschaft gut geeignet für Familien wie auch Paare mit Platzbedarf. Die Wohnung wird aktuell nicht über einen Makler angeboten und ist seit dem 13.09.2025 inseriert.</p>
+      </div>
+    </section>
+
+    <!-- Eckdaten mit Parallax-Bild -->
+    <section>
+      <div class="two-col">
+        <div class="col-text">
+          <h2>Eckdaten</h2>
+          <ul>
+            <li>Objekttyp: Wohnung (Maisonette)</li>
+            <li>Adresse: Steinäckerstraße 23, 73262 Reichenbach an der Fils</li>
+            <li>Wohnfläche: 112 m²</li>
+            <li>Etage: > 2. OG ohne Aufzug</li>
+            <li>Baujahr: 1999</li>
+            <li>Sanierungsjahr: 1999 (leichte kosmetische Maßnahmen)</li>
+            <li>Bauweise: Massiv</li>
+            <li>Zustand: Gepflegt (Gesamteindruck: 9/10)</li>
+            <li>Zimmer: 5 (2 Wohnzimmer, 3 Schlafzimmer)</li>
+            <li>Badezimmer: 1 (mit Wanne und Dusche), separates WC</li>
+            <li>Küche: 1 Einbauküche vorhanden</li>
+            <li>Balkon: 1 vorhanden</li>
+            <li>Tageslicht im Bad: Ja</li>
+            <li>Keller: Ja</li>
+            <li>Parkmöglichkeit: Garage (ca. 13 m²)</li>
+            <li>Heizung: Gas-Zentralheizung</li>
+            <li>Energieeffizienz: Klasse B (Verbrauch)</li>
+            <li>Dämmung & Isolierung: vorhanden (seit 1999)</li>
+            <li>Verglasung: Doppelverglasung (Kunststoff-Fenster)</li>
+            <li>Ausrichtung: Süden</li>
+            <li>Kaminofen: Ja</li>
+            <li>Bodenbeläge: Vinyl, Laminat, Fliesen</li>
+            <li>Wandbeläge: Tapete</li>
+            <li>Aktuelle Mieteinnahme: 1.400 € monatlich</li>
+            <li>Hausgeld: 500 €</li>
+            <li>Instandhaltungsrücklage: 10.000 €</li>
+            <li>Marktnachfrage: 6/10</li>
+            <li>Lagebewertung: B+ (Infrastruktur & Nachbarschaft jeweils 7–8/10)</li>
+          </ul>
+        </div>
+        <div class="col-img">
+          <div class="parallax-wrapper">
+            <div class="parallax">
+              <img src="https://i.ibb.co/TxJk1K6z/screenshot.jpg" alt="Lagekarte">
+              <img class="overlay" src="https://i.ibb.co/4w9wrrs7/screenshot.jpg" alt="Preis-Overlay">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rechnung -->
+    <section>
+      <h2>Rechnung</h2>
+      <iframe src="https://docs.google.com/spreadsheets/d/1dM2kNxbYbh9RYCN9O72FJDCHwkf9NMcU_zO49F3888U/edit?usp=sharing" width="100%" height="600px" frameborder="0"></iframe>
+    </section>
+
+    <!-- PDF Download Button -->
+    <section class="download" style="text-align: center; padding: 4rem 0 2rem;">
+      <a href="https://docs.google.com/presentation/d/1K2n5I1kUVwgd9hCFZ-WidNiKZgvx341aOHnsnR-J8kc/export/pdf" target="_blank" class="download-btn">
+        📄 Bewertung als PDF herunterladen
+      </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <a href="https://pro-estate-stuttgart.de">
+        <img src="https://www.pro-estate-stuttgart.de/wp-content/uploads/2025/02/Logo-ProEstate-04.svg" alt="Logo Pro Estate Stuttgart">
+        Pro Estate Stuttgart
+      </a>
+    </footer>
+  </div>
+
+  <!-- Parallax-Logik -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const mainImgs    = document.querySelectorAll('.parallax img:not(.overlay)');
+      const overlayImgs = document.querySelectorAll('.parallax .overlay');
+      const speedMain    = 0.05;
+      const speedOverlay = 0.1;
+      const maxOffset    = 40;
+
+      function updateParallax() {
+        mainImgs.forEach(img => {
+          const rect = img.parentElement.getBoundingClientRect();
+          const offset = (rect.top + rect.height/2) - window.innerHeight/2;
+          const disp   = Math.max(-maxOffset, Math.min(maxOffset, -offset * speedMain));
+          img.style.transform = `translateY(${disp}px)`;
+        });
+        overlayImgs.forEach(img => {
+          const rect = img.parentElement.getBoundingClientRect();
+          const offset = (rect.top + rect.height/2) - window.innerHeight/2;
+          const disp   = Math.max(-maxOffset, Math.min(maxOffset, -offset * speedOverlay));
+          img.style.transform = `translateY(${disp}px)`;
+        });
+      }
+
+      window.addEventListener('scroll', updateParallax);
+      updateParallax();
+    });
+  </script>
+</body>
+</html>
